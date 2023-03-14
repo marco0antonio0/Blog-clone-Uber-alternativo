@@ -43,7 +43,9 @@ class _HomeState extends State<Home> {
                         child: Image(image: AssetImage('Images/logo.png'))),
                     Spacer(flex: 1),
                     textPerson(
-                        text: 'Ubrexx', Color: Colors.white, fontSize: 30),
+                        text: 'Uber criminoso',
+                        Color: Colors.white,
+                        fontSize: 30),
                     Spacer(flex: 200),
                   ],
                 )),
