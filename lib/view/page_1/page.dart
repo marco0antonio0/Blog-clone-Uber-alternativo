@@ -123,7 +123,7 @@ Widget containerLeft_resize(largura, altura) {
             alignment: Alignment.centerLeft,
             child: Container(
               child: Text(
-                'Qual seu nome ?',
+                'Qual seu nome???',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
               ),
               margin: EdgeInsets.only(bottom: 20),
