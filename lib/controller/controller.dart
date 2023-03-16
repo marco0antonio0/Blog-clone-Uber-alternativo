@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+
+class GetDados {
+  get() async {
+    final getWeb = await http.get(Uri.parse(
+        'https://apex.oracle.com/pls/apex/marco0antonio/data/testando'));
+  }
+}
 
 class PassDados {
   PassDados._();
