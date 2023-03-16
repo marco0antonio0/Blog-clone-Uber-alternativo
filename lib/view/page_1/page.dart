@@ -43,9 +43,7 @@ class _HomeState extends State<Home> {
                         child: Image(image: AssetImage('Images/logo.png'))),
                     Spacer(flex: 1),
                     textPerson(
-                        text: 'Uber criminosoo',
-                        Color: Colors.white,
-                        fontSize: 30),
+                        text: 'Ubrexx', Color: Colors.white, fontSize: 30),
                     Spacer(flex: 200),
                   ],
                 )),
@@ -146,6 +144,33 @@ Widget containerLeft_resize(largura, altura) {
                       fillColor: Colors.white),
                 )),
           ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              child: Text(
+                'qual seu destino?',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              ),
+              margin: EdgeInsets.only(bottom: 20),
+            ),
+          ),
+          //=================================================
+          // text . textfield
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+                //  largura do textField
+                width: largura > 810 ? largura - 200 : 300,
+                child: TextField(
+                  onChanged: (Value) => dados.nome = Value,
+                  decoration: InputDecoration(
+                      label: Text('digite '),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      filled: true,
+                      fillColor: Colors.white),
+                )),
+          ),
           //=================================================
           //  margin
           SizedBox(height: altura * 0.3),
@@ -219,6 +244,43 @@ Widget containerLeft(largura, altura) {
                       fillColor: Colors.white),
                 )),
           ),
+          Container(
+            height: 20,
+          ),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              child: Text(
+                'qual seu destino?',
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+              ),
+              margin: EdgeInsets.only(bottom: 20),
+            ),
+          ),
+          //=================================================
+          // text . textfield
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Container(
+                //  largura do textField
+                width: largura > 1100 ? 500 : 400,
+                child: TextField(
+                  onChanged: (Value) => dados.nome = Value,
+                  decoration: InputDecoration(
+                      label: Text('digite '),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50)),
+                      filled: true,
+                      fillColor: Colors.white),
+                )),
+          ),
+          karde2(largura, nome: "maguari", fn: () {
+            print("ola");
+          }),
+          karde2(largura, nome: "ideal", fn: () {
+            print("oi");
+          }),
+
           //=================================================
           //  margin
           SizedBox(height: altura * 0.3),
@@ -231,5 +293,26 @@ Widget containerLeft(largura, altura) {
         ],
       ),
     ),
+  );
+}
+
+Widget karde2(largura, {nome = "", fn}) {
+  return InkWell(
+    child: Align(
+      alignment: Alignment.centerLeft,
+      child: Container(
+        margin: EdgeInsets.symmetric(vertical: 20),
+        decoration: BoxDecoration(
+            color: Color(0xffF7F7F7),
+            borderRadius: BorderRadius.circular(50),
+            boxShadow: [boxShadow()]),
+        width: largura > 1100 ? 500 : 400,
+        child: Center(child: textPerson(text: nome)),
+        height: 120,
+      ),
+    ),
+    onTap: () {
+      fn();
+    },
   );
 }
