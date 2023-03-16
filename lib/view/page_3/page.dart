@@ -5,6 +5,7 @@ import 'package:uber/model/model_widget.dart';
 import 'package:uber/view/page_2/page.dart';
 
 PassDados dados = PassDados.instance;
+back_dados data = back_dados.instance;
 
 class Page_3 extends StatefulWidget {
   const Page_3({super.key});
@@ -87,7 +88,7 @@ Widget containerRight(largura, altura) {
             height: 80,
             color: Color(0xff85C4A2),
             child: Center(
-                child: Text('Destino -->' + ' cabanagem',
+                child: Text('Destino -->' + data.nome_get!,
                     style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -136,7 +137,7 @@ Widget containerLeft(largura, altura, setState) {
                     Align(
                         alignment: Alignment(-0.8, 0),
                         child: textPerson(
-                            text: 'Motorista: ' + ' Jose',
+                            text: 'Motorista: ' + data.sortearNome(),
                             fontSize: 25,
                             Color: Colors.white)),
                     Spacer(flex: 10),

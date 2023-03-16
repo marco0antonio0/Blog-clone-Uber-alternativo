@@ -5,6 +5,7 @@ import 'package:uber/view/page_1/page.dart';
 import 'package:get/get.dart';
 import 'package:uber/view/page_3/page.dart';
 
+back_dados data = back_dados.instance;
 PassDados dados = PassDados.instance;
 
 class Page_2 extends StatefulWidget {
@@ -105,7 +106,7 @@ Widget containerRight(largura, altura) {
             height: 80,
             color: Color(0xff85C4A2),
             child: Center(
-                child: Text('Destino -->' + ' cabanagem',
+                child: Text('Destino --> ' + data.nome_get!,
                     style: TextStyle(
                         fontSize: 20,
                         color: Colors.white,
@@ -154,7 +155,7 @@ Widget containerLeft(largura, altura, setState) {
             //  BTN
             cardPerson(
                 nome: 'Ubrexx',
-                valor: "25.00",
+                valor: "${data.sortear(ate: 30)}",
                 status: dados.status1[0],
                 fn: () {
                   dados.statusFunction1(0);
@@ -162,7 +163,7 @@ Widget containerLeft(largura, altura, setState) {
                 }),
             cardPerson(
                 nome: 'Ubrexx\nLuxuoso',
-                valor: "25.00",
+                valor: "${data.sortear(ate: 60)}",
                 status: dados.status1[1],
                 fn: () {
                   dados.statusFunction1(1);

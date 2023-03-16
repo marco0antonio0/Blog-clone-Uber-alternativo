@@ -4,6 +4,7 @@ import 'package:uber/controller/controller.dart';
 import 'package:uber/model/model_widget.dart';
 import 'package:uber/view/page_2/page.dart';
 
+back_dados data = back_dados.instance;
 PassDados dados = PassDados.instance;
 
 class Home extends StatefulWidget {
@@ -18,7 +19,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     double largura = MediaQuery.of(context).size.width;
     double altura = MediaQuery.of(context).size.height;
-    print(largura);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -53,7 +53,7 @@ class _HomeState extends State<Home> {
                   ? Row(
                       children: [
                         Spacer(flex: 100),
-                        containerLeft(largura, altura),
+                        containerLeft(largura, altura, setState),
                         //=================================================
                         containerRight(largura, altura), Spacer(flex: 100),
                       ],
@@ -202,7 +202,7 @@ Widget containerRight(largura, altura) {
 
 //=================================================
 //  Contaienr Left
-Widget containerLeft(largura, altura) {
+Widget containerLeft(largura, altura, setState) {
   return Container(
     //  alinhamento right / margem
     alignment: Alignment.centerRight,
@@ -260,26 +260,27 @@ Widget containerLeft(largura, altura) {
           //=================================================
           // text . textfield
           Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-                //  largura do textField
-                width: largura > 1100 ? 500 : 400,
-                child: TextField(
-                  onChanged: (Value) => dados.nome = Value,
-                  decoration: InputDecoration(
-                      label: Text('digite '),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      filled: true,
-                      fillColor: Colors.white),
-                )),
-          ),
-          karde2(largura, nome: "maguari", fn: () {
-            print("ola");
-          }),
-          karde2(largura, nome: "ideal", fn: () {
-            print("oi");
-          }),
+              alignment: Alignment.centerLeft,
+              child: Container(
+                  //  largura do textField
+                  width: largura > 1100 ? 500 : 400,
+                  child: TextField(
+                      onChanged: (Value) {
+                        setState(() {});
+                        data.statusBTN = data.consulta(Value);
+                      },
+                      decoration: InputDecoration(
+                          label: Text('digite '),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(50)),
+                          filled: true,
+                          fillColor: Colors.white)))),
+          //==============================================================
+          data.statusBTN
+              ? karde2(largura,
+                  nome: "destino selecionou -> " + (data.nome_get!), fn: () {})
+              : Container(),
+          //==============================================================
 
           //=================================================
           //  margin
@@ -288,7 +289,7 @@ Widget containerLeft(largura, altura) {
           //  container . buttom
           btn_next(fn: () {
             dados.isEmpytnome();
-            dados.statusNome ? Get.to(() => Page_2()) : null;
+            dados.statusNome && data.statusBTN ? Get.to(() => Page_2()) : null;
           })
         ],
       ),
@@ -303,12 +304,12 @@ Widget karde2(largura, {nome = "", fn}) {
       child: Container(
         margin: EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
-            color: Color(0xffF7F7F7),
+            color: Color(0xff47B074),
             borderRadius: BorderRadius.circular(50),
             boxShadow: [boxShadow()]),
         width: largura > 1100 ? 500 : 400,
-        child: Center(child: textPerson(text: nome)),
-        height: 120,
+        child: Center(child: textPerson(text: nome, Color: Colors.white)),
+        height: 70,
       ),
     ),
     onTap: () {
