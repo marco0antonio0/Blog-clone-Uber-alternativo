@@ -48,6 +48,8 @@ class _HomeState extends State<Home> {
                   ],
                 )),
             SizedBox(height: altura * 0.02),
+            //===============================================================
+            //          divisão de bloco
             Container(
               child: largura > 1000
                   ? Row(
@@ -294,26 +296,5 @@ Widget containerLeft(largura, altura, setState) {
         ],
       ),
     ),
-  );
-}
-
-Widget karde2(largura, {nome = "", fn}) {
-  return InkWell(
-    child: Align(
-      alignment: Alignment.centerLeft,
-      child: Container(
-        margin: EdgeInsets.symmetric(vertical: 20),
-        decoration: BoxDecoration(
-            color: Color(0xff47B074),
-            borderRadius: BorderRadius.circular(50),
-            boxShadow: [boxShadow()]),
-        width: largura > 1100 ? 500 : 400,
-        child: Center(child: textPerson(text: nome, Color: Colors.white)),
-        height: 70,
-      ),
-    ),
-    onTap: () {
-      fn();
-    },
   );
 }

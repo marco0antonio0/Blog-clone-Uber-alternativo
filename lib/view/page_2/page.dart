@@ -201,7 +201,7 @@ Widget containerLeft(largura, altura, setState) {
         //===============================================
         SizedBox(height: 20),
         //===============================================
-        btn_next(text: 'Solicitar uber -->', fn: () => Get.to(() => Page_3()))
+        btn_next(text: 'Solicitar ubrexx -->', fn: () => Get.to(() => Page_3()))
       ],
     ),
   );
