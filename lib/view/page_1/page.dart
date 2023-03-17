@@ -272,7 +272,7 @@ Widget containerLeft(largura, altura, setState) {
                         data.statusBTN = data.consulta(Value);
                       },
                       decoration: InputDecoration(
-                          label: Text('digite '),
+                          label: Text('digite o nome do bairro ex: souza'),
                           border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(50)),
                           filled: true,
