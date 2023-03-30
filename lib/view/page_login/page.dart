@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:uber/controller/controller.dart';
-import 'package:uber/view/page_trabalheConosco/widget_.dart';
+import 'package:uber/view/page_login/widget_.dart';
 import 'package:uber/view/widgets/topBar.dart';
 
 PassDados dados = PassDados.instance;
 back_dados data = back_dados.instance;
 
-class page_trabalheConosco extends StatefulWidget {
-  const page_trabalheConosco({super.key});
+class page_login extends StatefulWidget {
+  const page_login({super.key});
 
   @override
-  State<page_trabalheConosco> createState() => _page_trabalheConoscoState();
+  State<page_login> createState() => _page_loginState();
 }
 
-class _page_trabalheConoscoState extends State<page_trabalheConosco> {
+class _page_loginState extends State<page_login> {
   @override
   Widget build(BuildContext context) {
     double largura = MediaQuery.of(context).size.width;

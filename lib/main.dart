@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:uber/view/page_1/page.dart';
-import 'package:uber/view/page_tabalheConosco/page.dart';
+import 'package:uber/view/page_trabalheConosco/page.dart';
 
 import 'view/page_seguranca/page.dart';
 
