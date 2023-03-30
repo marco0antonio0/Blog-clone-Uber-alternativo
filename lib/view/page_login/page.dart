@@ -19,6 +19,7 @@ class _page_loginState extends State<page_login> {
     double largura = MediaQuery.of(context).size.width;
     double altura = MediaQuery.of(context).size.height;
     print(largura);
+
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -26,28 +27,10 @@ class _page_loginState extends State<page_login> {
             //=======================================================================================
             //  top bar
             Topbar(largura),
-            SizedBox(height: altura * 0.02),
+
             Container(
-                child: Row(
-              children: [
-                //=================================================
-                //  margin
-                Spacer(flex: 100),
-                //=================================================
-                // container esquerdo
-                containerLeft(largura, altura, setState),
-                //=================================================
-                //  margin
-                Spacer(flex: 50),
-                //=================================================
-                // container direito
-                containerRight(largura, altura),
-                //=================================================
-                //  margin
-                Spacer(flex: 100),
-                //=================================================
-              ],
-            )),
+              child: ConteinerLogin(),
+            ),
           ],
         ),
       ),

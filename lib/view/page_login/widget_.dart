@@ -1,34 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:uber/model/model_widget.dart';
-import 'package:uber/view/page_2/page.dart';
-//          DEFAULT
-//=======================================================================================
-//  Contaienr Image Map
 
-Widget containerRight(largura, altura) {
-  double larg = (largura / 2);
-  return Container(
-    color: Colors.red,
-    child: Column(
-      children: [],
-    ),
-    width: largura > 1800 ? larg - 400 : larg - 200,
-    height: 700,
-  );
-}
-//=======================================================================================
+class ConteinerLogin extends StatelessWidget {
+  const ConteinerLogin({super.key});
 
-//=======================================================================================
-//  Contaienr Left
-Widget containerLeft(largura, altura, setState) {
-  return Container(
-    color: Colors.green,
-    //  alinhamento right / margem
-    width: (largura / 2) - 100,
-    height: 700,
-    child: Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [],
-    ),
-  );
+  @override
+  Widget build(BuildContext context) {
+    double largura = MediaQuery.of(context).size.width;
+    double altura = MediaQuery.of(context).size.height;
+    double responsive_altura = largura > 1100
+        ? 120
+        : largura > 750
+            ? 90
+            : 80;
+    double responsive_sizeContainer = 700;
+
+    return Container(
+      height: altura - responsive_altura,
+      width: largura,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('Images/image_maps_background.png'),
+              fit: BoxFit.fitWidth)),
+      //===================================
+      //  contaienr data
+      child: Center(
+        child: Container(
+          width: responsive_sizeContainer,
+          height: responsive_sizeContainer - 200,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(50), color: Colors.white),
+        ),
+      ),
+    );
+  }
 }
