@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:uber/controller/controller.dart';
 import 'package:uber/model/model_widget.dart';
 import 'package:get/get.dart';
 import 'package:uber/view/page_3/page.dart';
+
+login_pass instance = login_pass.instance;
+back_dados data = back_dados.instance;
 
 //          DEFAULT
 //=======================================================================================
@@ -57,7 +61,9 @@ Widget containerLeft(largura, altura, setState) {
                   alignment: Alignment.centerLeft,
                   height: 50,
                   child: textPerson(
-                      text: 'Ola, ' + dados.nome! + ',seja bem vindo',
+                      text: 'Ola ' +
+                          instance.data_['nome']! +
+                          ' ,Veja nossas opções',
                       fontSize: 30)),
               Container(
                   alignment: Alignment.centerLeft,
@@ -74,7 +80,7 @@ Widget containerLeft(largura, altura, setState) {
             //  BTN
             cardPerson(
                 nome: 'Ubrexx',
-                valor: "${data.sortear(ate: 30)}",
+                valor: "${data.valorubrexnormal}",
                 status: dados.status1[0],
                 fn: () {
                   dados.statusFunction1(0);
@@ -82,7 +88,7 @@ Widget containerLeft(largura, altura, setState) {
                 }),
             cardPerson(
                 nome: 'Ubrexx\nLuxuoso',
-                valor: "${data.sortear(ate: 60)}",
+                valor: "${data.valorubrexluxuoso}",
                 status: dados.status1[1],
                 fn: () {
                   dados.statusFunction1(1);

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:uber/controller/controller.dart';
-import 'package:uber/model/model_widget.dart';
-import 'package:uber/view/page_2/page.dart';
 import 'package:uber/view/page_3/widget_.dart';
 import 'package:uber/view/widgets/topBar.dart';
 

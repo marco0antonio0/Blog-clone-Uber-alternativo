@@ -24,7 +24,6 @@ class _Page_2State extends State<Page_2> {
     double largura = MediaQuery.of(context).size.width;
     double altura = MediaQuery.of(context).size.height;
 
-    print(largura);
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
@@ -35,24 +34,25 @@ class _Page_2State extends State<Page_2> {
             SizedBox(height: altura * 0.02),
             //=======================================================================================
             Container(
+                width: largura,
                 child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Spacer(flex: largura > 1100 ? 40 : 5),
-                containerLeft(largura, altura, setState),
-                //=================================================
-                largura > 1100 ? Container() : Spacer(flex: 5),
-                largura > 950
-                    ? containerRight(
-                        largura,
-                        altura,
-                      )
-                    : Container(),
-                largura > 950
-                    ? Spacer(flex: largura > 1100 ? 100 : 5)
-                    : Container(),
-              ],
-            )),
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Spacer(flex: largura > 1100 ? 40 : 5),
+                    containerLeft(largura, altura, setState),
+                    //=================================================
+                    largura > 1100 ? Container() : Spacer(flex: 5),
+                    largura > 950
+                        ? containerRight(
+                            largura,
+                            altura,
+                          )
+                        : Container(),
+                    largura > 950
+                        ? Spacer(flex: largura > 1100 ? 100 : 5)
+                        : Container(),
+                  ],
+                )),
           ],
         ),
       ),

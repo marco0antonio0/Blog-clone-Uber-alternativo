@@ -3,9 +3,6 @@ import 'package:uber/controller/controller.dart';
 import 'package:uber/view/page_login/widget_.dart';
 import 'package:uber/view/widgets/topBar.dart';
 
-PassDados dados = PassDados.instance;
-back_dados data = back_dados.instance;
-
 class page_login extends StatefulWidget {
   const page_login({super.key});
 
@@ -27,10 +24,9 @@ class _page_loginState extends State<page_login> {
             //=======================================================================================
             //  top bar
             Topbar(largura),
-
-            Container(
-              child: ConteinerLogin(),
-            ),
+            //=======================================================================================
+            //  PageLogin
+            ConteinerLogin(),
           ],
         ),
       ),

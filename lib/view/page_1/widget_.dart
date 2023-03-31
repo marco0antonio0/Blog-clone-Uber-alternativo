@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:uber/controller/controller.dart';
 import '../../model/model_widget.dart';
 import 'package:uber/view/page_2/page.dart';
 
+login_pass instance = login_pass.instance;
+back_dados data = back_dados.instance;
 //          DEFAULT
 //=======================================================================================
 //  Contaienr Image Map
@@ -38,29 +41,15 @@ Widget containerLeft(largura, altura, setState) {
             alignment: Alignment.centerLeft,
             child: Container(
               child: Text(
-                'Qual seu nome ?',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
+                /*  */ 'Ola ' +
+                    instance.data_['nome']! +
+                    ',\nSeja bem vindo(a)',
+                style: TextStyle(fontSize: 40, fontWeight: FontWeight.w500),
               ),
               margin: EdgeInsets.only(bottom: 20),
             ),
           ),
-          //=================================================
-          // text . textfield
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Container(
-                //  largura do textField
-                width: largura > 1100 ? 500 : 400,
-                child: TextField(
-                  onChanged: (Value) => dados.nome = Value,
-                  decoration: InputDecoration(
-                      label: Text('digite '),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(50)),
-                      filled: true,
-                      fillColor: Colors.white),
-                )),
-          ),
+
           Container(
             height: 20,
           ),
@@ -105,8 +94,10 @@ Widget containerLeft(largura, altura, setState) {
           //=================================================
           //  container . buttom
           btn_next(fn: () {
-            dados.isEmpytnome();
-            dados.statusNome && data.statusBTN ? Get.to(() => Page_2()) : null;
+            data.valorubrexnormal = data.sortear(ate: 30) + 10;
+            data.valorubrexluxuoso = data.sortear(ate: 60) + 30;
+
+            true && data.statusBTN ? Get.to(() => Page_2()) : null;
           })
         ],
       ),

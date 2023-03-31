@@ -26,28 +26,14 @@ class _page_cadastroState extends State<page_cadastro> {
             //=======================================================================================
             //  top bar
             Topbar(largura),
-            SizedBox(height: altura * 0.02),
             Container(
-                child: Row(
-              children: [
-                //=================================================
-                //  margin
-                Spacer(flex: 100),
-                //=================================================
-                // container esquerdo
-                containerLeft(largura, altura, setState),
-                //=================================================
-                //  margin
-                Spacer(flex: 50),
-                //=================================================
-                // container direito
-                containerRight(largura, altura),
-                //=================================================
-                //  margin
-                Spacer(flex: 100),
-                //=================================================
-              ],
-            )),
+              child: Row(
+                children: [
+                  containerleft(),
+                  containerRight(),
+                ],
+              ),
+            ),
           ],
         ),
       ),
