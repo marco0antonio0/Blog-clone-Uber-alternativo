@@ -7,6 +7,6 @@ import 'package:uber/view/page_seguranca/page.dart';
 
 void main() {
   runApp(
-    GetMaterialApp(home: page_seguranca()),
+    GetMaterialApp(home: page_login()),
   );
 }
